@@ -1,0 +1,23 @@
+[project]
+name = "churnguard"
+version = "0.1.0"
+description = "Customer churn prediction pipeline and API for multiple datasets (Telco and Bank)."
+readme = "README.md"
+authors = [
+    { name = "prathmeshpandya", email = "ph.pandya1414@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.1",
+    "seaborn>=0.13.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.8,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+]

@@ -1,0 +1,7 @@
+# Store text files with LF line endings and keep them LF on every computer (Windows, Mac, Linux).
+# This overrides each person's own Git line-ending setting, so the repo is consistent for everyone.
+* text=auto eol=lf
+
+# Images are binary: never convert them.
+*.png binary
+*.jpg binary
