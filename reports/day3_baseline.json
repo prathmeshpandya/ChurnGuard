@@ -1,0 +1,72 @@
+{
+  "telco": {
+    "dummy": {
+      "accuracy": 0.7345635202271115,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "true_negatives": 1035,
+      "false_positives": 0,
+      "false_negatives": 374,
+      "true_positives": 0
+    },
+    "logreg": {
+      "accuracy": 0.8055358410220014,
+      "precision": 0.6572327044025157,
+      "recall": 0.5588235294117647,
+      "f1": 0.6040462427745664,
+      "roc_auc": 0.8421349040274871,
+      "true_negatives": 926,
+      "false_positives": 109,
+      "false_negatives": 165,
+      "true_positives": 209
+    },
+    "logreg_balanced": {
+      "accuracy": 0.7381121362668559,
+      "precision": 0.504302925989673,
+      "recall": 0.7834224598930482,
+      "f1": 0.6136125654450262,
+      "roc_auc": 0.8416388953473353,
+      "true_negatives": 747,
+      "false_positives": 288,
+      "false_negatives": 81,
+      "true_positives": 293
+    }
+  },
+  "bank": {
+    "dummy": {
+      "accuracy": 0.7965,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "true_negatives": 1593,
+      "false_positives": 0,
+      "false_negatives": 407,
+      "true_positives": 0
+    },
+    "logreg": {
+      "accuracy": 0.808,
+      "precision": 0.5891472868217055,
+      "recall": 0.18673218673218672,
+      "f1": 0.2835820895522388,
+      "roc_auc": 0.7747578086561138,
+      "true_negatives": 1540,
+      "false_positives": 53,
+      "false_negatives": 331,
+      "true_positives": 76
+    },
+    "logreg_balanced": {
+      "accuracy": 0.7135,
+      "precision": 0.38722826086956524,
+      "recall": 0.7002457002457002,
+      "f1": 0.49868766404199477,
+      "roc_auc": 0.7771654551315569,
+      "true_negatives": 1142,
+      "false_positives": 451,
+      "false_negatives": 122,
+      "true_positives": 285
+    }
+  }
+}

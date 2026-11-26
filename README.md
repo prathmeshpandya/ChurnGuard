@@ -12,7 +12,7 @@ Predict which customers are likely to leave (churn), using one reusable ML pipel
 ## Progress
 - [x] **Day 1:** Project setup, data download, exploratory data analysis
 - [x] **Day 2:** Config-driven cleaning, train/test split and preprocessing pipeline
-- [ ] Day 3: Baseline model and metrics
+- [x] **Day 3:** Baseline models (dummy, logistic regression, balanced) and evaluation metrics
 - [ ] Day 4: Better models, cross-validation, tuning
 - [ ] Day 5: Explaining predictions, saving models
 - [ ] Day 6: FastAPI prediction service
@@ -41,12 +41,28 @@ features.py build_preprocessor(): numbers → impute + scale,
 ```
 Adding a new dataset only needs a new `DatasetConfig`.
 
+## Results so far (test set)
+Train and score the baseline models: `uv run python scripts/train_baseline.py`
+
+| Dataset | Model | Accuracy | Precision | Recall | ROC-AUC |
+|---|---|---|---|---|---|
+| Telco | Dummy (always "stays") | 0.735 | 0.000 | 0.000 | 0.500 |
+| Telco | Logistic regression | 0.806 | 0.657 | 0.559 | 0.842 |
+| Telco | Logistic regression (balanced) | 0.738 | 0.504 | 0.783 | 0.842 |
+| Bank | Dummy (always "stays") | 0.796 | 0.000 | 0.000 | 0.500 |
+| Bank | Logistic regression | 0.808 | 0.589 | 0.187 | 0.775 |
+| Bank | Logistic regression (balanced) | 0.714 | 0.387 | 0.700 | 0.777 |
+
+The dummy model scores 73–80% accuracy while catching zero churners, which is why accuracy alone is misleading here.
+Full metrics: `reports/day3_baseline.json`; confusion matrices: `reports/figures/`.
+
 ## Project structure
 ```
 data/raw/            the two CSV datasets
 notebooks/           exploration notebooks
-scripts/             download_data.py, check_pipeline.py
-src/churnguard/      config.py, data.py, features.py
+reports/             saved metrics (JSON) and charts
+scripts/             download_data.py, check_pipeline.py, train_baseline.py
+src/churnguard/      config.py, data.py, features.py, models.py, evaluate.py
 pyproject.toml       project info and package list
 uv.lock              exact package versions
 ```
